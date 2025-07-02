@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function ErrorPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center dark:bg-[#202C37] bg-slate-50">
+    <main className="min-h-screen flex flex-col items-center justify-center dark:bg-[#202C37] bg-slate-50 px-[5%]">
       <div className="max-w-lg w-full mx-auto px-6 py-12 bg-white dark:bg-[#2B3743] rounded-lg shadow-lg flex flex-col items-center">
         <h2 className="text-7xl font-extrabold text-[#FF5A5F] mb-2">404</h2>
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center dark:text-white text-gray-900">

@@ -12,18 +12,12 @@ export default function Countries() {
     fetchCountries();
   }, []);
 
-  const fetchCountries = async () => {
-    try {
-      const response = await fetch("https://restcountries.com/");
-      const data = await response.json();
-      setCountries(data);
-    } catch (error) {
-      console.error("Failed to fetch countries:", error);
-      setCountries([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // Using a local JSON file for demonstration purposes
+  const fetchCountries = () =>
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setCountries(data))
+      .finally(() => setLoading(false));
 
   return (
     <>

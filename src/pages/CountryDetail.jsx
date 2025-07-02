@@ -1,11 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Link, useParams } from "react-router";
 import { useEffect, useState } from "react";
+import CountryLoading from "../components/CountryLoading";
 
 export default function CountryDetail() {
   const { countryName } = useParams();
   const [country, setCountry] = useState(null);
 
   useEffect(() => {
+    fetchCountry();
+  }, [countryName]);
+
+  const fetchCountry = () =>
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
@@ -17,23 +23,8 @@ export default function CountryDetail() {
         );
         setCountry(found);
       });
-  }, [countryName]);
-
   if (!country) {
-    return (
-      <>
-        <div className="px-[5%] md:px-[7%] my-8">
-          <Link to="/countries">
-            <button className="cursor-pointer dark:bg-[#2B3743] bg-slate-50 shadow-sm rounded-md py-2 px-8">
-              Back
-            </button>
-          </Link>
-        </div>
-        <main className="px-[5%] md:px-[7%]">
-          <p className="text-center text-lg">Loading country details...</p>
-        </main>
-      </>
-    );
+    return <CountryLoading />;
   }
 
   const {
@@ -63,9 +54,9 @@ export default function CountryDetail() {
         <img
           src={flag}
           alt={name}
-          className="md:w-1/2 w-full object-cover h-auto max-h-110"
+          className="w-full md:w-1/2 object-cover h-auto max-h-110"
         />
-        <section className="md:w-1/2">
+        <section className="w-full md:w-1/2">
           <h2 className="font-bold text-2xl">{name}</h2>
 
           <div className="flex flex-col md:flex-row justify-between gap-8 my-8 text-sm">

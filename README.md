@@ -31,21 +31,17 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot of the REST Countries API project](./screenshot.jpg)
+![Screenshot of the REST Countries API project](./src/design/desktop-design-home-dark.jpg)
 
 ### Links
 
-- Solution URL: [https://github.com/yourusername/rest-countries-api-with-color-theme-switcher](https://github.com/yourusername/rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [https://your-live-site-url.com](https://your-live-site-url.com)
+- Solution URL: [https://github.com/DemoStephen/Country-Scope](https://github.com/DemoStephen/Country-Scope)
+- Live Site URL: [https://countryscope.vercel.app/](https://countryscope.vercel.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
@@ -61,19 +57,20 @@ Users should be able to:
 #### Example: Fetching countries from the API
 
 ```js
-const fetchCountries = async () => {
-  const response = await fetch('https://restcountries.com/v3.1/all');
-  const data = await response.json();
-  setCountries(data);
-};
+const fetchCountries = () =>
+  fetch("/data.json")
+    .then((res) => res.json())
+    .then((data) => setCountries(data))
+    .finally(() => setLoading(false));
 ```
 
-#### Example: Theme toggle button
+#### Example: Theme toggle function
 
 ```js
-<button onClick={toggleTheme}>
-  {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-</button>
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle("dark");
+  localStorage.theme = isDark ? "dark" : "light";
+}
 ```
 
 ### Continued development

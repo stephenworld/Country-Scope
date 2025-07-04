@@ -68,7 +68,7 @@ export default function Form({ handleCountries }) {
           id="search"
           name="search"
           placeholder="Search for a country..."
-          className="p-3 focus:outline-none"
+          className="p-3 focus:outline-none text-gray-500 dark:text-gray-400"
           value={search}
           onChange={handleSearch}
         />

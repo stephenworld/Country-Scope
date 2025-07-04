@@ -6,7 +6,7 @@ export default function CountryInfo({
   capital,
 }) {
   return (
-    <article className="dark:bg-[#2B3743] bg-slate-50 shadow-sm rounded-md overflow-hidden">
+    <article className="dark:bg-[#2B3743] bg-slate-50 shadow-sm rounded-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <img
         src={flag}
         alt={name}

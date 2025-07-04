@@ -1,11 +1,14 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# Country Scope - REST Countries Explorer 🌍
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). This project helped me practice working with APIs, React, and implementing a dark/light theme switcher.
+Country Scope is a modern web app that lets you explore countries of the world, search and filter by region, and view detailed information—all with a beautiful dark mode.  
+This project is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
+
+---
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Features](#features)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -16,18 +19,19 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
+---
+
 ## Overview
 
-### The challenge
+### Features
 
-Users should be able to:
-
-- See all countries from the API on the homepage
-- Search for a country using an input field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode
+- 🌐 See all countries from the REST Countries API on the homepage
+- 🔍 Search for a country using an input field
+- 🗺️ Filter countries by region
+- 📄 Click on a country to see more detailed information on a separate page
+- 🔗 Click through to the border countries on the detail page
+- 🌓 Toggle the color scheme between light and dark mode
+- ⚡ Fast, responsive, and mobile-friendly
 
 ### Screenshot
 
@@ -38,6 +42,8 @@ Users should be able to:
 - Solution URL: [https://github.com/DemoStephen/Country-Scope](https://github.com/DemoStephen/Country-Scope)
 - Live Site URL: [https://countryscope.vercel.app/](https://countryscope.vercel.app/)
 
+---
+
 ## My process
 
 ### Built with
@@ -46,22 +52,26 @@ Users should be able to:
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [REST Countries API](https://restcountries.com/)
+- [React Router](https://reactrouter.com/)
 
 ### What I learned
 
-- How to fetch and display data from a public API in React.
-- Implementing a theme switcher using React state and Tailwind CSS.
-- Managing global state for theme and filters.
-- Routing with React Router for country detail pages.
+- Fetching and displaying data from a public API in React
+- Implementing a theme switcher using React and Tailwind CSS
+- Managing global state for theme and filters
+- Routing with React Router for country detail pages
+- Responsive design and accessibility best practices
 
 #### Example: Fetching countries from the API
 
 ```js
-const fetchCountries = () =>
-  fetch("/data.json")
-    .then((res) => res.json())
-    .then((data) => setCountries(data))
-    .finally(() => setLoading(false));
+const fetchCountries = async () => {
+  const response = await fetch("https://restcountries.com/v3.1/all");
+  const data = await response.json();
+  setCountries(data);
+  setLoading(false);
+};
 ```
 
 #### Example: Theme toggle function
@@ -75,10 +85,10 @@ function toggleTheme() {
 
 ### Continued development
 
-- Improve accessibility, especially for keyboard navigation and screen readers.
-- Add unit and integration tests.
-- Enhance error handling for API requests.
-- Optimize performance for large datasets.
+- Improve accessibility, especially for keyboard navigation and screen readers
+- Add unit and integration tests
+- Enhance error handling for API requests
+- Optimize performance for large datasets
 
 ### Useful resources
 
@@ -86,10 +96,14 @@ function toggleTheme() {
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [React Router Documentation](https://reactrouter.com/)
 
+---
+
 ## Author
 
 - Frontend Mentor - [@demostephen](https://www.frontendmentor.io/profile/demostephen)
 - GitHub - [demostephen](https://github.com/demostephen)
+
+---
 
 ## Acknowledgments
 
